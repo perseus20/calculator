@@ -28,7 +28,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  if (b === 0) return 'ERROR'
+  if (b === 0) return -1
   else return a / b
 }
 
@@ -98,12 +98,17 @@ function handleClick() {
       number.push(Number(tempNum))
       tempNum = ''
       calc.push(this.classList[2])
+      console.log(calc)
       if (number.length >= 2 && calc[0]) {
         result = Number(operate(calc[0], number[0], number[1]).toFixed(3))
-        number[0] = result
+        if (result === -1) {
+          displayResult('ERROR')
+        } else {
+          number[0] = result
+          displayResult(result)
+        }
         number.pop()
         calc.shift()
-        displayResult(result)
       }
     }
   }
@@ -117,8 +122,12 @@ function handleClick() {
       tempNum = ''
       if (number.length === 2 && calc[0]) {
         result = Number(operate(calc[0], number[0], number[1]).toFixed(3))
-        number[0] = result
-        displayResult(result)
+        if (result === -1) {
+          displayResult('ERROR')
+        } else {
+          number[0] = result
+          displayResult(result)
+        }
         clear()
       }
     }
