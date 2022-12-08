@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1.1rem;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: var(--BG_COLOR);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+:root {
+  --BG_COLOR: #faedcd;
+  --DARK_COLOR: #001219;
+  --SCREEN_BGCOLOR: #ffc8dd;
+  --BUTTON_BGCOLOR: #cdb4db;
+  --BUTTON_BGCOLOR_HOVER: #edcdff;
+}
+
+.calculator {
+  width: 400px;
+  height: 520px;
+  margin: 0 20px;
+  border: 10px solid var(--DARK_COLOR);
+  background-color: var(--DARK_COLOR);
+  border-radius: 10px;
+  color: var(--DARK_COLOR);
+  box-shadow: 0px 0px 50px 2px rgb(92, 92, 92);
+}
+
+.screen {
+  width: 100%;
+  height: 100px;
+  background-color: var(--SCREEN_BGCOLOR);
+  border: 3px solid var(--DARK_COLOR);
+  box-shadow: 0px 0px 9px rgb(92, 92, 92) inset;
+  border-radius: 10px;
+  font-size: 3rem;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 3px solid var(--DARK_COLOR);
+  background-color: var(--DARK_COLOR);
+  border-radius: 10px;
+  height: 400px;
+  gap: 2px;
+}
+
+.btn {
+  font-size: 28px;
+  background-color: var(--BUTTON_BGCOLOR);
+}
+
+.btn:hover {
+  background-color: var(--BUTTON_BGCOLOR_HOVER);
+}
+
+.span-col-2 {
+  grid-column: span 2;
+}
